@@ -1,3 +1,3 @@
-FROM tomcat:8.0.20-jre8
- 
-COPY target/java-web-app*.war /usr/local/tomcat/webapps/java-web-app.war
+FROM anapsix/alpine-java
+COPY /var/lib/jenkins/workspace/3nd project/target/spring-petclinic-2.7.3.jar /usr/local/tomcat/webapps/spring-petclinic-2.7.3.jar
+CMD ["java","-jar","/usr/local/tomcat/webapps/spring-petclinic-2.7.3.jar"]
